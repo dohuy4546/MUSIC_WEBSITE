@@ -8,6 +8,7 @@
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
+    scroll-behavior: smooth;
 }
 
 /* Track */
@@ -231,6 +232,7 @@ header nav .user:hover {
     width: 2rem;
     height: 2rem;
     margin-right: 10px;
+    border-radius: 4px;
 }
 
 .content .left_content .menu_song .songItem h5 {
@@ -280,6 +282,14 @@ header nav .user:hover {
     margin: 0 auto;
 }
 
+.right_content .section {
+    margin-top: 1rem;
+}
+
+.right_content .section:first-child {
+    margin: 0px 0px 9px 0px;
+}
+
 .right_content .description h1 {
     font-size: 25px;
 }
@@ -321,10 +331,6 @@ header nav .user:hover {
     border-radius: 5px;
 }
 
-.right_content .popular_song {
-    margin-top: 24px;
-}
-
 .right_content .popular_song .Tieu_de {
     justify-content: space-between;
 }
@@ -341,11 +347,15 @@ header nav .user:hover {
 
 .right_content .popular_song .pop_songs {
     width: 100%;
-    height: 208px;
-    margin-top: 15px;
+    height: 200px;
+    margin-top: 1rem;
     align-items: flex-start;
     overflow: auto;
     scroll-behavior: smooth;
+}
+
+.right_content .popular_song .pop_songs::-webkit-scrollbar {
+    display: none;
 }
 
 .right_content .popular_song .pop_songs .songItem {
@@ -412,6 +422,170 @@ header nav .user:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.new_song .songs {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    overflow: auto;
+}
+
+.new_song .songs::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+
+.new_song .songs .song {
+    display: flex;
+    width: 306px;
+    height: 150px;
+    margin-right: 15px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--menu-hover);
+}
+
+.new_song .songs .song .thumbnail {
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    margin-left: 10px;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.new_song .songs .song .thumbnail img {
+    width: 120px;
+    height: 120px;
+}
+
+.new_song .songs .song .thumbnail:hover img {
+    transform: scale(1.15);
+}
+
+.new_song .songs .song .thumbnail:hover i {
+    opacity: 1;
+}
+
+.new_song .songs .song .thumbnail i {
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    opacity: 0;
+}
+
+.new_song .songs .song .thumbnail i::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    left: -12px;
+    top: -7px;
+    box-shadow: inset 0px 0px 3px #fff
+}
+
+.new_song .songs .song .s_content {
+    margin-left: 10px;
+    width: 50%;
+    height: 80%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.new_song .songs .song .s_content .s_time {
+    align-items: flex-end;
+}
+
+.new_song .songs .song .s_content .s_time p,
+.new_song .songs .song .s_content .s_time h1 {
+    margin-right: 1rem;
+}
+
+.f_artists .top {
+    justify-content: space-between;
+}
+
+.f_artists .top .btn_song i {
+    cursor: pointer;
+    padding: 10px;
+    color: var(--light_dark);
+}
+
+.f_artists .top .btn_song i:hover {
+    color: #000;
+}
+
+.f_artists .artists {
+    margin-top: 1rem;
+    overflow: auto;
+}
+
+.f_artists .artists::-webkit-scrollbar {
+    display: none;
+}
+
+.f_artists .artists .artist {
+    margin: 6px 16px;
+}
+
+.f_artists .artists .artist .avatar_artist img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.f_artists .artists .artist .avatar_artist img:hover {
+    transform: scale(1.1);
+    filter: brightness(60%);
+}
+
+.f_artists .artists .artist .name {
+    text-align: center;
+    margin-top: 6px;
+}
+
+
+.slider>div {
+    display: flex;
+    margin: auto;
+    overflow: auto;
+    width: 92%;
+}
+
+.web_info>div {
+    flex-direction: column;
+    width: 100%;
+}
+
+.web_info>div>div>img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.web_info>div>div>h4 {
+    line-height: 2;
+}
+
+.web_info>div>div:nth-child(2) {
+    width: 33%;
+}
+
+.web_info>div>div>a {
+    line-height: 2;
+    text-decoration: none;
+    color: #000;
+}
+
+.web_info>div>div:last-child {
+    width: 28%;
 }
 
 /* ============ */
@@ -575,6 +749,7 @@ footer .music_center .progress .progress_Seek {
     height: 8px;
 
     position: absolute;
+    top: 0;
     cursor: pointer;
 
     z-index: 100;
@@ -656,4 +831,12 @@ footer .music_right #volume::-webkit-slider-thumb {
 
 footer .music_right #volume::-webkit-slider-thumb:hover {
     box-shadow: 0 0 0 12px rgba(98, 0, 238, 0.1);
+}
+
+#volume::-ms-fill-lower {
+    background-color: #012658;
+}
+
+#volume::-ms-fill-upper {
+    background-color: #000;
 }
