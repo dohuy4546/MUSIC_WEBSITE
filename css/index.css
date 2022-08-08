@@ -69,11 +69,25 @@ header {
     height: var(--header-height);
 }
 
-.title {
-    border: 1px solid #000;
-    width: var(--left-width);
+#menu_btn {
+    position: absolute;
+    top: 30px;
+    left: 24px;
+}
+
+#menu_btn>a {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
     height: 100%;
-    padding: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.title {
+    width: calc(var(--left-width));
+    height: 100%;
+    padding: 20px 0px 20px 60px;
     background: var(--menu_color);
 }
 
@@ -97,7 +111,6 @@ header nav {
     width: calc(100% - var(--left-width));
     height: 100%;
     padding: 0px 30px;
-    border: 1px solid #000;
     background: var(--main_color);
 }
 
@@ -161,7 +174,6 @@ header nav .user:hover {
 .content {
     width: 100%;
     height: calc(100% - var(--header-height) - var(--footer-height));
-    border: 1px solid #000;
     align-items: unset;
 }
 
@@ -196,7 +208,6 @@ header nav .user:hover {
 
 .content .left_content .menu_song {
     height: 72%;
-    border: 1px solid #000;
     margin: 0 auto;
     overflow: auto;
 }
@@ -235,6 +246,10 @@ header nav .user:hover {
     border-radius: 4px;
 }
 
+.content .left_content .menu_song .songItem img:hover {
+    transform: skewX(5deg);
+}
+
 .content .left_content .menu_song .songItem h5 {
     width: 70%;
     overflow: hidden;
@@ -266,7 +281,7 @@ header nav .user:hover {
     width: 100%;
     height: 55%;
     right: 10%;
-    background: url('/MUSIC_WEBSITE/image/img2/bg_sontungmtp.png') no-repeat right top;
+    background: url('/image/img2/bg_sontungmtp.png') no-repeat right top;
     z-index: -1;
 }
 
@@ -555,7 +570,11 @@ header nav .user:hover {
     display: flex;
     margin: auto;
     overflow: auto;
-    width: 92%;
+    max-width: 840px;
+}
+
+.slider>div img {
+    width: 100%;
 }
 
 .web_info>div {
@@ -709,134 +728,11 @@ footer .music_left .info_song .subtitle {
     white-space: nowrap;
 }
 
-/* MUSIC_CONTROL */
-footer .music_center .control {
-    justify-content: space-evenly;
-}
-
-footer .music_center {
-    width: 60%;
-}
-
-footer .music_center .control button {
-    font-size: 1.3rem;
-    margin: 0rem 1rem;
-
-    outline: none;
-    cursor: pointer;
-
-    background: none;
-    border: none;
-}
-
-footer .music_center>.progress {
-    justify-content: space-evenly;
-}
-
-footer .music_center .progress .progress_Seek {
-    width: 70%;
-    height: 8px;
-
-    position: relative;
-
-    background-color: var(--progress-bg-color);
-
-    border-radius: 8px;
-}
-
-#progress {
-    width: 100%;
-    height: 8px;
-
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-
-    z-index: 100;
-    opacity: 0;
-}
-
-footer .music_center .progress .progress_Seek .seek_bar {
-    width: 47%;
-    height: 100%;
-
-    /* position: absolute;
-    top: 0; */
-
-    background: var(--progress-color);
-
-    border-radius: 8px;
-    /* transition: 1s linear; */
-}
-
-footer .music_center .progress .progress_Seek .seek_dot {
-    width: 12px;
-    height: 12px;
-
-    position: absolute;
-    left: 0;
-    top: -2px;
-
-    background-color: var(--light-gray);
-    border-radius: 50%;
-
-    /* transition: 1s linear; */
-}
-
-footer .music_center .progress .progress_Seek .seek_dot::before {
-    content: '';
-    width: 25px;
-    height: 25px;
-
-    position: absolute;
-    left: -8px;
-    top: -8px;
-
-    border: 2px solid var(--light-gray);
-    border-radius: 50%;
-
-    box-shadow: inset 0px 0px 3px var(--light-gray);
-}
-
-/* volume */
-
-footer .music_right i {
-    margin-right: 5px;
-
-}
-
-footer .music_right #volume {
-    -webkit-appearance: none;
-
-    height: 4px;
-
-    background-color: #012658;
-    border-radius: 4px;
+footer .music_play audio {
+    width: 50%;
     outline: none;
 }
 
-footer .music_right #volume::-webkit-slider-thumb {
-    -webkit-appearance: none;
-
-    width: 1rem;
-    height: 1rem;
-
-    background-color: #6208ee;
-    border-radius: 50%;
-
-    cursor: pointer;
-    outline: none;
-    box-shadow: 0 0 0 0 rgba(98, 0, 238, 0.1);
-}
-
-footer .music_right #volume::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 0 12px rgba(98, 0, 238, 0.1);
-}
-
-#volume::-ms-fill-lower {
-    background-color: #012658;
-}
-
-#volume::-ms-fill-upper {
-    background-color: #000;
+audio::-webkit-media-controls-panel {
+    background-color: var(--footer-color);
 }

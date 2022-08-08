@@ -1,0 +1,87 @@
+@media screen and (max-width: 1500px) {}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --left-width: 100%;
+    }
+
+    header {
+        height: 15%;
+    }
+
+    .title {
+        display: none;
+    }
+
+    #menu_btn {
+        top: 20px;
+        left: 20px;
+    }
+
+    header nav {
+        width: 100%;
+        padding: 0;
+    }
+
+    header nav>div {
+        flex-direction: column-reverse;
+    }
+
+    header nav ul {
+        margin-top: 50px;
+    }
+
+    header nav .user {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .content {
+        height: 70%;
+    }
+
+    .content .left_content {
+        display: none;
+    }
+
+    .content .left_content .menu {
+        height: 31%;
+    }
+
+    .content .left_content .menu_song {
+        height: 69%;
+    }
+
+    .content .right_content {
+        width: 100%;
+    }
+
+    .web_info>div>div:nth-child(2) {
+        width: 80%;
+    }
+
+    .web_info>div>div:nth-child(3) {
+        width: 70%;
+    }
+
+    footer .music_play {
+        height: 15%;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    footer .music_play .music_left {
+        width: 80%;
+    }
+
+    footer .music_play .music_left .wave {
+        display: none;
+    }
+
+    footer .music_play audio {
+        width: 100%;
+    }
+}

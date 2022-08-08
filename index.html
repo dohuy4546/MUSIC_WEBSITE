@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/responsive1.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
@@ -20,8 +21,11 @@
     <link rel="icon" href="image/logo.jpg" />
     <title>MYZIC</title>
   </head>
-  <body>
+  <body onload="init()">
     <header class="flex">
+      <div class="flex" id="menu_btn">
+        <a href="#" class="showHide flex"><i class="fa-solid fa-bars"></i></a>
+      </div>
       <div class="title">
         <a href="#" class="flex">
           <img src="image/logo.jpg" alt="logo" />
@@ -34,7 +38,7 @@
             <li>
               <a href="#" class="active">Discover<span></span></a>
             </li>
-            <li><a href="#">My Library</a></li>
+            <li><a href="#">Library</a></li>
             <li><a href="#">Radio</a></li>
           </ul>
           <div class="search"></div>
@@ -544,67 +548,35 @@
                 <a href="#">Góp ý</a>
                 <a href="#">Thỏa thuận sử dụng</a>
               </div>
+              <div>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <footer>
-    <div class="music_play flex">
-      <div class="music_left flex">
-        <div class="wave flex">
-          <div class="wave_line"></div>
-          <div class="wave_line"></div>
-          <div class="wave_line"></div>
-        </div>
-        <img src="image/img/1.jpg" alt="anh1" id="poster_music" />
-        <div class="info_song">
-          <h5 id="title">Em nên dừng lại</h5>
-          <div class="subtitle">Khang Việt</div>
-        </div>
-      </div>
-      <div class="music_center">
-        <div class="control flex">
-          <button><i class="btn fa-solid fa-arrows-rotate"></i></button>
-          <button><i class="btn fa-solid fa-backward-fast"></i></button>
-          <button><i class="btn fa-solid fa-play"></i></button>
-          <button><i class="btn fa-solid fa-forward-fast"></i></button>
-          <button><i class="btn fa-solid fa-shuffle"></i></button>
-        </div>
-        <div class="progress flex">
-          <span id="progress_Start">0:00</span>
-          <div class="progress_Seek">
-            <input
-              type="range"
-              id="progress"
-              value="0"
-              step="1"
-              min="0"
-              max="100"
-            />
-            <div class="seek_bar"></div>
-            <div class="seek_dot"></div>
+    <footer>
+      <div class="music_play flex">
+        <div class="music_left flex">
+          <div class="wave flex">
+            <div class="wave_line"></div>
+            <div class="wave_line"></div>
+            <div class="wave_line"></div>
           </div>
-          <span id="progress_End">6:00</span>
-          <audio id="audio" src="song/audio/1.mp3" preload="metadata"></audio>
+          <img src="image/img/1.jpg" alt="anh1" id="poster_music" />
+          <div class="info_song">
+            <h5 id="title">Em nên dừng lại</h5>
+            <div class="subtitle">Khang Việt</div>
+          </div>
         </div>
+        <audio controls src="song/audio/1.mp3" type="audio/mp3"></audio>
+        <div></div>
       </div>
-      <div class="music_right">
-        <div class="volume_control flex">
-          <i class="fa-solid fa-volume-low"></i>
-          <input
-            id="volume"
-            type="range"
-            value="30"
-            step="1"
-            min="0"
-            max="100"
-          />
-          <div class="seek_bar"></div>
-          <div class="seek_dot"></div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
+    <script src="JS/indexjs.js"></script>
+  </body>
 </html>
