@@ -97,7 +97,7 @@ function init(){
             {
                 var songImg = document.querySelectorAll(".menuSongItem img");
                 if(sideSong[k].classList.contains("song_active"))
-                    audioSrc.setAttribute("src", `song/audio2/${songImg[k].alt}.mp3`)
+                    audioSrc.setAttribute("src", `song/audio3/${songImg[k].alt}.mp3`)
             } 
         }
     }
