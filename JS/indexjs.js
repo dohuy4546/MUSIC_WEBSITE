@@ -110,7 +110,7 @@ function init(){
             console.log(new_song.scrollLeft);
             if(new_song.scrollLeft > new_song.scrollWidth - 660)
                 new_song.scrollLeft -= new_song.scrollWidth;
-        }, 2000)
+        }, 4000)
     }
     else
     {
@@ -120,7 +120,7 @@ function init(){
             console.log(new_song.scrollLeft);
             if(new_song.scrollLeft >= new_song.scrollWidth - 950)
                 new_song.scrollLeft -= new_song.scrollWidth;
-        }, 2000)
+        }, 4000)
     }
 }
 

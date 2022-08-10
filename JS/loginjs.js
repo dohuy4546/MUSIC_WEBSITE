@@ -1,4 +1,3 @@
-
 function init(){
     var forms = document.querySelector(".forms");
     var pwShowHide = document.querySelectorAll(".eye-icon");

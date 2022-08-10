@@ -49,13 +49,11 @@ body {
 
 .sign_up,
 .login {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 
 .show {
-    opacity: 1;
-    pointer-events: auto;
+    display: block;
 }
 
 header {
