@@ -81,24 +81,26 @@ function init(){
             artists.scrollLeft -= 530;
     };
 
-    var sideSong = document.querySelectorAll(".menu_song .menuSongItem");
-    var songName = document.querySelectorAll(".menuSongItem h5");
-    var audioSrc = document.getElementById("myAudio"); 
+    var sideSong = document.querySelectorAll(".SongItems .SongItem");
+    var audio = document.getElementById("myAudio"); 
     for(var i = 0; i < sideSong.length; i++)
     {
         sideSong[i].onclick = function (){
-            var songImg = document.querySelectorAll(".songItem img");
+            var author = this.querySelector("p");
+            var songImg = this.querySelector("img");
+            var songName = this.querySelector("h5");
+            var posterMusic = document.getElementById("poster_music");
+            var title = document.getElementById("title");
+            var subtitle = document.getElementById("s_t");
             for(var j = 0; j <sideSong.length; j++)
             {
                 sideSong[j].classList.remove("song_active");
             }
             setTimeout(this.classList.add("song_active"), 2000);  
-            for(var k = 0; k < sideSong.length; k++)
-            {
-                var songImg = document.querySelectorAll(".menuSongItem img");
-                if(sideSong[k].classList.contains("song_active"))
-                    audioSrc.setAttribute("src", `song/audio3/${songImg[k].alt}.mp3`)
-            } 
+            audio.setAttribute("src", `song/audio3/${songName.textContent}.mp3`);
+            title.innerText = songName.textContent;
+            subtitle.innerText = author.textContent;
+            posterMusic.src = songImg.src; 
         }
     }
 
@@ -107,7 +109,6 @@ function init(){
             var new_song = document.querySelector(".new_song .songs");
             new_song.scrollLeft += 310;
             console.log(new_song.scrollWidth);
-            console.log(new_song.scrollLeft);
             if(new_song.scrollLeft > new_song.scrollWidth - 660)
                 new_song.scrollLeft -= new_song.scrollWidth;
         }, 4000)
@@ -117,7 +118,6 @@ function init(){
         setInterval(function(){
             var new_song = document.querySelector(".new_song .songs");
             new_song.scrollLeft += 630;
-            console.log(new_song.scrollLeft);
             if(new_song.scrollLeft >= new_song.scrollWidth - 950)
                 new_song.scrollLeft -= new_song.scrollWidth;
         }, 4000)

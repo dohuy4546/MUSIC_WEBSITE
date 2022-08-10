@@ -1,0 +1,35 @@
+@media screen and (max-width: 1500px) {}
+
+@media screen and (max-width: 1090px) {
+    body .form>a {
+        top: 10px;
+        left: 10%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    body .right_container {
+        display: none;
+        width: 0%;
+    }
+
+    body .left_container {
+        padding-top: 20px;
+        width: 100%;
+        border-radius: 5%;
+    }
+
+    body .form {
+        width: 100%;
+    }
+
+    body .form>a {
+        top: 10px;
+        left: 10%;
+    }
+}
