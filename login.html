@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/logincss.css" />
+  </head>
+  <body onload="init()">
+    <section class="left_container forms flex">
+      <div class="show form login">
+        <div class="form_content">
+          <header>Login</header>
+          <form action="#">
+            <div class="field input_field">
+              <input type="email" placeholder="Email" class="input" />
+            </div>
+            <div class="field input_field">
+              <input type="password" placeholder="Password" class="password" />
+              <i class="eye-icon fa-solid fa-eye"></i>
+            </div>
+            <div class="form_link">
+              <a href="#" class="forgot_pass">Forgot password?</a>
+            </div>
+            <div class="field button_field">
+              <button>Login</button>
+            </div>
+          </form>
+          <div class="form_link">
+            <span
+              >Don't have an account?
+              <a href="#" class="link signup_link">Sign up</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="media-options">
+          <a href="#" class="field facebook flex">
+            <i class="fa-brands fa-facebook-f flex"></i>
+            <span>Login with Facebook</span>
+          </a>
+        </div>
+
+        <div class="media-options">
+          <a href="#" class="field google flex">
+            <img src="image/Google_Icons.webp" alt="icon google" />
+            <span>Login with Google</span>
+          </a>
+        </div>
+      </div>
+      <!-- Sign up Form -->
+      <div class="form sign_up">
+        <div class="form_content">
+          <header>Sign up</header>
+          <form action="#">
+            <div class="field input_field">
+              <input type="email" placeholder="Email" class="input" />
+            </div>
+            <div class="field input_field">
+              <input
+                type="password"
+                placeholder="Create password"
+                class="passsword"
+              />
+            </div>
+            <div class="field input_field">
+              <input
+                type="password"
+                placeholder="Confirm password"
+                class="password"
+              />
+              <i class="eye-icon fa-solid fa-eye-slash"></i>
+            </div>
+            <div class="field button-field">
+              <button>Sign up</button>
+            </div>
+          </form>
+          <div class="form_link">
+            <span
+              >Already have an account?
+              <a href="#" class="link login_link">Login</a></span
+            >
+          </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="media-options">
+          <a href="#" class="field facebook flex">
+            <i class="fa-brands fa-facebook-f flex"></i>
+            <span>Sign Up with Facebook</span>
+          </a>
+        </div>
+
+        <div class="media-options">
+          <a href="#" class="field google flex">
+            <img src="image/Google_Icons.webp" alt="icon google" />
+            <span>Sign Up with Google</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="right_container">
+      <img src="image/img2/bg_sontungmtp2.png" alt="bg" />
+    </section>
+    <script src="JS/loginjs.js"></script>
+  </body>
+</html>
