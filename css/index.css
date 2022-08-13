@@ -626,8 +626,14 @@ header nav .user:hover {
     color: #000;
 }
 
-.web_info>div>div:last-child {
+.web_info>div>div:nth-child(3) {
     width: 28%;
+}
+
+.web_info .social_media img {
+    width: 70px;
+    height: 70px;
+    padding: 15px;
 }
 
 /* ============ */

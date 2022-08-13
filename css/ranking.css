@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thanh trượt */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    scroll-behavior: smooth;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#fc5c7d, #6a82fb);
+    border-radius: 8px;
+}
+
+:root {
+    --left-width: 25%;
+    --menu_color: #fbe6e6;
+    --main_color: #f9dbdb;
+    --footer-color: #f9c6c5;
+    --light_dark: rgba(0, 0, 0, 0.6);
+    --none-active-color: #289595;
+    --active-color: #012658;
+    --header-height: 12%;
+    --footer-height: 10%;
+    --menu-hover: #afb9b9;
+    --progress-bg-color: rgba(105, 105, 170, .2);
+    --progress-color: #bcfcff;
+    --light-gray: #767676;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.active {
+    display: block;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+.col {
+    width: 33.3333%;
+    padding: 10px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .mySlides img {
+    position: relative;
+    width: 100%;
+    height: 560px;
+}
+
+header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+header nav a.title,
+header nav a.user {
+    text-decoration: none;
+    color: #551A8B;
+}
+
+header nav a.title img {
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header nav a.user img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contain {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.section>h1 {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section>h1 span {
+    width: 20%;
+    height: 1.5px;
+    background-color: #000;
+    position: absolute;
+    bottom: -3px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.col>h1 {
+    margin-bottom: 20px;
+    color: var(--light-gray);
+}
+
+.col .first {
+    position: relative;
+    height: 200px;
+    cursor: pointer;
+}
+
+.col .first img {
+    width: 100%;
+    height: 100%;
+}
+
+.col p.subtitle {
+    color: var(--light_dark);
+    font-size: 14px;
+}
+
+.col .song {
+    align-items: flex-start;
+    text-align: start;
+    margin-left: 10px;
+}
+
+.col .first .song {
+    position: absolute;
+    bottom: 0;
+}
+
+.col .first .song a,
+.col .first .song p.subtitle {
+    color: #fff;
+}
+
+.col .song h4 {
+    margin-right: 1rem;
+}
+
+.col .song a {
+    text-decoration: none;
+    color: #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.col .song a:hover {
+    color: var(--menu-hover);
+    transition: .5s;
+}
+
+.col>div:nth-child(3)>.song {
+    margin: 10px;
+    margin-left: 10px;
+}
+
+.col>div:nth-child(3) img {
+    width: 47px;
+    height: 47px;
+    margin-right: 1.5rem;
+}
+
+.col>div:nth-child(3)>.song>div:nth-child(3) {
+    overflow: hidden;
+}
+
+.hotTopic>div {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hotTopic>div img:first-child {
+    width: 100%;
+}
+
+.hotTopic>div img {
+    padding: 5px;
+    width: 50%;
+}
+
+.blog>div {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.blog a.blogItem {
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    text-align: start;
+}
+
+.blog>div>a.blogItem {
+    width: 50%;
+    height: 300px;
+}
+
+.blog .second {
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.blog .second a.blogItem {
+    width: 50%;
+    height: 150px;
+}
+
+.blog a.blogItem img {
+    width: 100%;
+    height: 100%;
+}
+
+.blog>div a.blogItem h5 {
+    position: absolute;
+    bottom: 8px;
+}
+
+.mobile_app img:first-child {
+    width: 100%;
+}
+
+.mobile_app {
+    position: relative;
+}
+
+.mobile_app .inside {
+    position: absolute;
+    top: 40%;
+    right: 50px;
+}
+
+.mobile_app .inside img {
+    margin-right: 1rem;
+}
+
+.web_info {
+    background-color: var(--footer-color);
+}
+
+.web_info>div {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.web_info>div>div>img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.web_info>div>div>h4 {
+    line-height: 2;
+}
+
+.web_info>div>div:nth-child(2) {
+    width: 28%;
+}
+
+.web_info>div>div>a {
+    line-height: 2.5;
+    text-decoration: none;
+    color: #000;
+}
+
+.web_info>div>div>a:hover {
+    color: var(--light-gray);
+}
+
+.web_info>div>div:nth-child(3) {
+    width: 20%;
+}
+
+.web_info .social_media img {
+    width: 70px;
+    height: 70px;
+    padding: 15px;
+}
