@@ -1,0 +1,78 @@
+@media screen and (max-width: 1500px) {}
+
+@media screen and (max-width: 1000px) {}
+
+@media screen and (max-width: 600px) {
+    header .mySlides img {
+        height: auto;
+    }
+
+    header nav {
+        padding: 5px;
+    }
+
+    header nav a.title img {
+        width: 50px;
+    }
+
+    header nav a.title {
+        font-size: 12px;
+    }
+
+    header nav a.user img {
+        width: 30px;
+    }
+
+    .col {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .section.topSong>div {
+        flex-direction: column;
+    }
+
+    .blog>div {
+        flex-direction: column;
+    }
+
+    .blog>div>a.blogItem {
+        width: 100%;
+    }
+
+    .blog .second {
+        width: 100%;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .blog .second a.blogItem {
+        width: 100%;
+    }
+
+    .mobile_app .inside {
+        width: 50%;
+        right: 0;
+    }
+
+    .mobile_app .inside h1 {
+        font-size: 14px;
+    }
+
+    .mobile_app .inside img {
+        width: 35%;
+    }
+
+    .web_info>div div:nth-child(2) {
+        width: 70%;
+    }
+
+    .web_info>div div:nth-child(3) {
+        width: 60%;
+    }
+
+    .web_info .social_media img {
+        width: 60px;
+        height: 60px;
+    }
+}
