@@ -209,3 +209,70 @@ a.google span {
 .right_container img {
     width: 500px;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(#ee9ca7, #ffdde1);
+    border-radius: 10px;
+}
+
+.modal>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal>div>i {
+    position: absolute;
+    font-size: 30px;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.modal>div>i:hover {
+    color: #fff;
+    transition: .5s;
+}
+
+.modal h1 {
+    text-transform: capitalize;
+    padding: 20px;
+}
+
+.check_icon {
+    background-color: #31e1a5;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.check_icon i {
+    font-size: 100px;
+    line-height: 150px;
+    color: #fff;
+}
+
+.modal input {
+    border: none;
+    background: linear-gradient(45deg, #FC5C7D, #6A82FB);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal input:hover {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    color: white;
+    transition: .5s;
+}

@@ -39,6 +39,20 @@
     --light-gray: #767676;
 }
 
+a#gototop {
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    background-color: #5071f2;
+    opacity: .8;
+    color: white;
+    position: fixed;
+    right: 15px;
+    bottom: 100px;
+    border-radius: 1rem 1rem;
+    z-index: 999;
+}
+
 .flex {
     display: flex;
     align-items: center;
@@ -84,13 +98,14 @@ header nav {
     right: 0;
     justify-content: space-between;
     padding: 20px;
+    z-index: 999;
 }
 
 header nav a.title,
 header nav a.user {
     text-decoration: none;
     color: #551A8B;
-    text-shadow: 0px 0px 20px #000;
+    text-shadow: 0px 0px 10px #000;
 }
 
 header nav a.title img {
@@ -194,6 +209,7 @@ header nav a.user img {
 
 .col>div:nth-child(3)>.song>div:nth-child(3) {
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .hotTopic>div {

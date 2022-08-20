@@ -39,6 +39,20 @@
     --light-gray: #767676;
 }
 
+a#gototop {
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    background-color: #5071f2;
+    opacity: .8;
+    color: white;
+    position: fixed;
+    right: 15px;
+    bottom: 100px;
+    border-radius: 1rem 1rem;
+    z-index: 999;
+}
+
 .song_active {
     background-color: var(--menu-hover);
 }
@@ -217,7 +231,7 @@ header nav .user:hover {
 }
 
 .content .left_content .menu_song .menuSongItem {
-    display: flex;
+    display: none;
     align-items: center;
     position: relative;
     list-style-type: none;
@@ -283,6 +297,24 @@ header nav .user:hover {
 
 .content .left_content .menu_song .menuSongItem i:hover {
     color: white;
+}
+
+.menu_song .add {
+    text-align: center;
+}
+
+.menu_song .add input[type="button"] {
+    border: none;
+    padding: 5px 10px;
+    background: linear-gradient(45deg, #FFAFBD, #ffc3a0);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu_song .add input[type="button"]:hover {
+    transition: .5s;
+    color: white;
+    background: linear-gradient(45deg, #de6161, #2657eb);
 }
 
 /* ===RIGHT_CONTENT=== */
@@ -361,6 +393,24 @@ header nav .user:hover {
 
 .right_content .popular_song .Tieu_de {
     justify-content: space-between;
+}
+
+.btn_song .add_btn {
+    display: inline-block;
+}
+
+.btn_song .add_btn>input[type="button"] {
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    background: linear-gradient(to right, #e052a0, #f15c41);
+    outline: none;
+}
+
+.btn_song .add_btn>input[type="button"]:hover {
+    color: white;
+    background: linear-gradient(to right, #3ec7e0, #526bf4);
 }
 
 .right_content .popular_song .Tieu_de .btn_song i {
@@ -459,6 +509,10 @@ header nav .user:hover {
     white-space: nowrap;
 }
 
+.new_song {
+    position: relative;
+}
+
 .new_song .songs {
     width: 100%;
     height: auto;
@@ -470,6 +524,24 @@ header nav .user:hover {
 .new_song .songs::-webkit-scrollbar {
     display: none;
     scroll-behavior: smooth;
+}
+
+#c-left-arrow,
+#c-right-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    z-index: 999;
+}
+
+#c-left-arrow:hover,
+#c-right-arrow:hover {
+    color: var(--footer-color);
+}
+
+#c-right-arrow {
+    right: 0;
 }
 
 .new_song .songs .song {
@@ -586,6 +658,11 @@ header nav .user:hover {
 .f_artists .artists .artist .name {
     text-align: center;
     margin-top: 6px;
+}
+
+.suggest>div {
+    margin-top: 1rem;
+    text-align: center;
 }
 
 

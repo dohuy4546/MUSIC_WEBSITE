@@ -33,3 +33,10 @@
         left: 10%;
     }
 }
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .form .field>span {
+        font-size: 12px;
+        margin-left: 26px;
+    }
+}

@@ -76,3 +76,23 @@
         height: 60px;
     }
 }
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    header .mySlides img {
+        height: auto;
+    }
+
+    .mobile_app .inside {
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+
+    .web_info>div>div:nth-child(2) {
+        width: 50%;
+    }
+
+    .web_info>div>div:nth-child(3) {
+        width: 40%;
+    }
+}

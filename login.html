@@ -15,6 +15,8 @@
     />
     <link rel="stylesheet" href="css/responsive2.css" />
     <link rel="stylesheet" href="css/logincss.css" />
+    <link rel="icon" href="image/logo.jpg" />
+    <script src="JS/jquery-3.6.0.min.js"></script>
   </head>
   <body onload="init()">
     <section class="left_container forms flex">
@@ -36,7 +38,7 @@
               <a href="#" class="forgot_pass">Forgot password?</a>
             </div>
             <div class="field button_field">
-              <button>Login</button>
+              <button class="login_btn">Login</button>
             </div>
           </form>
           <div class="form_link">
@@ -90,7 +92,7 @@
               <i class="eye-icon fa-solid fa-eye-slash"></i>
             </div>
             <div class="field button-field">
-              <button>Sign up</button>
+              <button class="signup_btn">Sign up</button>
             </div>
           </form>
           <div class="form_link">
@@ -119,8 +121,40 @@
       </div>
     </section>
     <section class="right_container">
-      <img src="image/img2/bg_sontungmtp2.png" alt="bg" />
+      <img src="image/bg_sontungmtp2.png" alt="bg" />
     </section>
+    <div class="modals">
+      <div class="login_modal modal">
+        <div class="flex">
+          <i class="close_btn fa-solid fa-xmark"></i>
+          <h1>congrats!</h1>
+          <p>Your account is ready</p>
+          <div class="check_icon">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <input
+            type="button"
+            value="Let's start your experience"
+            onclick="window.location.href='index.html';"
+          />
+        </div>
+      </div>
+      <div class="signup_modal modal">
+        <div class="flex">
+          <i class="close_btn fa-solid fa-xmark"></i>
+          <h1>congrats!</h1>
+          <p>Your account already to build</p>
+          <div class="check_icon">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <input
+            type="button"
+            value="Let's start your experience"
+            onclick="window.location.href='index.html';"
+          />
+        </div>
+      </div>
+    </div>
     <script src="JS/loginjs.js"></script>
   </body>
 </html>

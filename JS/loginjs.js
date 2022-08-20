@@ -1,3 +1,30 @@
+$(document).ready(function(){
+    $(".google, .facebook, .forgot_pass").click(function(){
+        alert("Sorry, we do not currently support this function");
+    });
+
+    $(".login_btn").click(function(){
+        $(".login_modal").show("slow");
+        $(".left_container, .right_container").css({
+            "opacity": ".7"
+        })
+    });
+
+    $(".signup_btn").click(function(){
+        $(".signup_modal").show("slow");
+        $(".left_container, .right_container").css({
+            "opacity": ".7"
+        })
+    });
+
+    $(".close_btn").click(function(){
+        $(".login_modal, .signup_modal").hide("slow");
+        $(".left_container, .right_container").css({
+            "opacity": "1"
+        })
+    })
+});
+
 function init(){
     var forms = document.querySelector(".forms");
     var pwShowHide = document.querySelectorAll(".eye-icon");

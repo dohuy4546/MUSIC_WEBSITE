@@ -20,8 +20,15 @@
     />
     <link rel="icon" href="image/logo.jpg" />
     <title>MYZIC</title>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script src="JS/indexjs.js"></script>
   </head>
   <body onload="init()">
+    <div>
+      <a id="gototop" href="javascript:;"
+        ><i class="fa-solid fa-arrow-up"></i
+      ></a>
+    </div>
     <header class="flex">
       <div class="flex" id="menu_btn">
         <a href="#" class="showHide flex"><i class="fa-solid fa-bars"></i></a>
@@ -38,12 +45,12 @@
             <li>
               <a href="#" class="active">Discover<span></span></a>
             </li>
-            <li><a href="#">Library</a></li>
+            <li><a href="News.html">News</a></li>
             <li><a href="Radio.html">Radio</a></li>
           </ul>
           <div class="search"></div>
           <a href="login.html" class="user flex">
-            <img src="image/img2/avatar.jpg" alt="user" />
+            <img src="image/avatar.jpg" alt="user" />
             <h4>Sign in</h4>
           </a>
         </div>
@@ -63,9 +70,9 @@
           >
         </div>
         <ul class="menu_song SongItems">
-          <li class="menuSongItem SongItem SongItem">
+          <li class="menuSongItem SongItem song_active">
             <span>01</span>
-            <img src="image/img/1.jpg" alt="On My Way" />
+            <img src="image/1.jpg" alt="On My Way" />
             <div>
               <h5>On My Way</h5>
               <p class="subtitle">Alan Walker</p>
@@ -74,7 +81,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>02</span>
-            <img src="image/img/1.jpg" alt="All Falls Down" />
+            <img src="image/1.jpg" alt="All Falls Down" />
             <div>
               <h5>All Falls Down</h5>
               <p class="subtitle">Alan Walker</p>
@@ -83,7 +90,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>03</span>
-            <img src="image/img/1.jpg" alt="Alone" />
+            <img src="image/1.jpg" alt="Alone" />
             <div>
               <h5>Alone</h5>
               <p class="subtitle">Alan Walker</p>
@@ -92,7 +99,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>04</span>
-            <img src="image/img/1.jpg" alt="Faded" />
+            <img src="image/1.jpg" alt="Faded" />
             <div>
               <h5>Faded</h5>
               <p class="subtitle">Alan Walker</p>
@@ -101,7 +108,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>05</span>
-            <img src="image/img/1.jpg" alt="The Spectre" />
+            <img src="image/1.jpg" alt="The Spectre" />
             <div>
               <h5>The Spectre</h5>
               <p class="subtitle">Alan Walker</p>
@@ -110,7 +117,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>06</span>
-            <img src="image/img/1.jpg" alt="Waiting For Love" />
+            <img src="image/1.jpg" alt="Waiting For Love" />
             <div>
               <h5>Waiting For Love</h5>
               <p class="subtitle">Avicii</p>
@@ -119,7 +126,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>07</span>
-            <img src="image/img/1.jpg" alt="Ignite" />
+            <img src="image/1.jpg" alt="Ignite" />
             <div>
               <h5>Ignite</h5>
               <p class="subtitle">Alan Walker</p>
@@ -128,7 +135,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>08</span>
-            <img src="image/img/1.jpg" alt="Stay" />
+            <img src="image/1.jpg" alt="Stay" />
             <div>
               <h5>Stay</h5>
               <p class="subtitle">Justin Bieber</p>
@@ -137,7 +144,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>01</span>
-            <img src="image/img/1.jpg" alt="anh1" />
+            <img src="image/1.jpg" alt="anh1" />
             <div>
               <h5>Faded</h5>
               <p class="subtitle">Alan Walker</p>
@@ -146,7 +153,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>01</span>
-            <img src="image/img/1.jpg" alt="anh1" />
+            <img src="image/1.jpg" alt="anh1" />
             <div>
               <h5>Faded</h5>
               <p class="subtitle">Alan Walker</p>
@@ -155,7 +162,7 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>01</span>
-            <img src="image/img/1.jpg" alt="anh1" />
+            <img src="image/1.jpg" alt="anh1" />
             <div>
               <h5>Faded</h5>
               <p class="subtitle">Alan Walker</p>
@@ -164,13 +171,16 @@
           </li>
           <li class="menuSongItem SongItem">
             <span>01</span>
-            <img src="image/img/1.jpg" alt="anh1" />
+            <img src="image/1.jpg" alt="anh1" />
             <div>
               <h5>Faded</h5>
               <p class="subtitle">Alan Walker</p>
             </div>
             <i class="fa-solid fa-circle-play"></i>
           </li>
+          <div class="add">
+            <input type="button" value="Load more" id="loadMore" />
+          </div>
         </ul>
       </div>
       <div class="right_content song">
@@ -191,14 +201,17 @@
             <div class="Tieu_de flex">
               <h4>Popular Song</h4>
               <div class="btn_song">
+                <div class="add_btn">
+                  <input type="button" value="+" id="add" />
+                </div>
                 <i class="fa-solid fa-arrow-left" id="left_song"></i>
                 <i class="fa-solid fa-arrow-right" id="right_song"></i>
               </div>
             </div>
-            <div class="pop_songs flex SongItems">
+            <ul class="pop_songs flex SongItems">
               <li class="songItem SongItem">
                 <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
+                  <img src="image/2.jpg" alt="Alan" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div>
@@ -208,7 +221,7 @@
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
+                  <img src="image/2.jpg" alt="Alan" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div>
@@ -218,7 +231,7 @@
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
+                  <img src="image/2.jpg" alt="Alan" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div>
@@ -228,7 +241,7 @@
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
+                  <img src="image/2.jpg" alt="Alan" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div>
@@ -238,7 +251,7 @@
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
+                  <img src="image/2.jpg" alt="Alan" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div>
@@ -248,7 +261,7 @@
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
+                  <img src="image/2.jpg" alt="Alan" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div>
@@ -258,7 +271,7 @@
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
+                  <img src="image/2.jpg" alt="Alan" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div>
@@ -266,34 +279,16 @@
                   <p class="subtitle">Alan Walker</p>
                 </div>
               </li>
-              <li class="songItem SongItem">
-                <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
-                  <i class="fa-solid fa-play"></i>
-                </div>
-                <div>
-                  <h5>Faded</h5>
-                  <p class="subtitle">Alan Walker</p>
-                </div>
-              </li>
-              <li class="songItem SongItem">
-                <div class="img_play flex">
-                  <img src="image/img/2.jpg" alt="Alan" />
-                  <i class="fa-solid fa-play"></i>
-                </div>
-                <div>
-                  <h5>Faded</h5>
-                  <p class="subtitle">Alan Walker</p>
-                </div>
-              </li>
-            </div>
+            </ul>
           </div>
           <div class="section new_song">
             <h4>New Song</h4>
             <div class="songs flex SongItems">
+              <i class="fa-solid fa-circle-arrow-left" id="c-left-arrow"></i>
+              <i class="fa-solid fa-circle-arrow-right" id="c-right-arrow"></i>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -309,7 +304,7 @@
               </div>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -325,7 +320,7 @@
               </div>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -341,7 +336,7 @@
               </div>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -357,7 +352,7 @@
               </div>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -373,7 +368,7 @@
               </div>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -389,7 +384,7 @@
               </div>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -405,7 +400,7 @@
               </div>
               <div class="song flex SongItem">
                 <div class="thumbnail flex">
-                  <img src="image/img/1.jpg" alt="" />
+                  <img src="image/1.jpg" alt="" />
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <div class="s_content">
@@ -432,105 +427,119 @@
             <div class="artists flex">
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Son_Tung_MTP.jpg" alt="Son Tung" />
+                  <img src="image/Son_Tung_MTP.jpg" alt="Son Tung" />
                 </div>
                 <h5 class="name">Sơn Tùng</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Đen_Vâu.jpg" alt="Đen_Vâu" />
+                  <img src="image/Đen_Vâu.jpg" alt="Đen_Vâu" />
                 </div>
                 <h5 class="name">Đen Vâu</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/T.A.P.jpg" alt="T.A.P" />
+                  <img src="image/T.A.P.jpg" alt="T.A.P" />
                 </div>
                 <h5 class="name">T.A.P</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Son_Tung_MTP.jpg" alt="Son Tung" />
+                  <img src="image/Son_Tung_MTP.jpg" alt="Son Tung" />
                 </div>
                 <h5 class="name">Sơn Tùng</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Đen_Vâu.jpg" alt="Đen_Vâu" />
+                  <img src="image/Đen_Vâu.jpg" alt="Đen_Vâu" />
                 </div>
                 <h5 class="name">Đen Vâu</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/T.A.P.jpg" alt="T.A.P" />
+                  <img src="image/T.A.P.jpg" alt="T.A.P" />
                 </div>
                 <h5 class="name">T.A.P</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Son_Tung_MTP.jpg" alt="Son Tung" />
+                  <img src="image/Son_Tung_MTP.jpg" alt="Son Tung" />
                 </div>
                 <h5 class="name">Sơn Tùng</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Đen_Vâu.jpg" alt="Đen_Vâu" />
+                  <img src="image/Đen_Vâu.jpg" alt="Đen_Vâu" />
                 </div>
                 <h5 class="name">Đen Vâu</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/T.A.P.jpg" alt="T.A.P" />
+                  <img src="image/T.A.P.jpg" alt="T.A.P" />
                 </div>
                 <h5 class="name">T.A.P</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Son_Tung_MTP.jpg" alt="Son Tung" />
+                  <img src="image/Son_Tung_MTP.jpg" alt="Son Tung" />
                 </div>
                 <h5 class="name">Sơn Tùng</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Đen_Vâu.jpg" alt="Đen_Vâu" />
+                  <img src="image/Đen_Vâu.jpg" alt="Đen_Vâu" />
                 </div>
                 <h5 class="name">Đen Vâu</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/T.A.P.jpg" alt="T.A.P" />
+                  <img src="image/T.A.P.jpg" alt="T.A.P" />
                 </div>
                 <h5 class="name">T.A.P</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Son_Tung_MTP.jpg" alt="Son Tung" />
+                  <img src="image/Son_Tung_MTP.jpg" alt="Son Tung" />
                 </div>
                 <h5 class="name">Sơn Tùng</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/Đen_Vâu.jpg" alt="Đen_Vâu" />
+                  <img src="image/Đen_Vâu.jpg" alt="Đen_Vâu" />
                 </div>
                 <h5 class="name">Đen Vâu</h5>
               </div>
               <div class="artist">
                 <div class="avatar_artist">
-                  <img src="image/img2/T.A.P.jpg" alt="T.A.P" />
+                  <img src="image/T.A.P.jpg" alt="T.A.P" />
                 </div>
                 <h5 class="name">T.A.P</h5>
               </div>
             </div>
           </div>
+          <div class="section suggest">
+            <h4>May be you'll like</h4>
+            <div class="embed">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/4PNxFsWVk30"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
           <div class="section slider">
             <div>
-              <img src="image/img2/slider1.jpg" alt="slider1" />
-              <img src="image/img2/slider2.jpg" alt="slider2" />
-              <img src="image/img2/slider3.jpg" alt="slider3" />
-              <img src="image/img2/slider4.jpg" alt="slider4" />
-              <img src="image/img2/slider5.jpg" alt="slider5" />
-              <img src="image/img2/slider6.jpg" alt="slider6" />
-              <img src="image/img2/slider7.jpg" alt="slider7" />
+              <img src="image/slider1.jpg" alt="slider1" />
+              <img src="image/slider2.jpg" alt="slider2" />
+              <img src="image/slider3.jpg" alt="slider3" />
+              <img src="image/slider4.jpg" alt="slider4" />
+              <img src="image/slider5.jpg" alt="slider5" />
+              <img src="image/slider6.jpg" alt="slider6" />
+              <img src="image/slider7.jpg" alt="slider7" />
             </div>
           </div>
           <div class="section web_info">
@@ -550,16 +559,16 @@
               </div>
               <div class="social_media">
                 <a href="#"
-                  ><img src="image/img2/facebook_icon.png" alt="facebook_icon"
+                  ><img src="image/facebook_icon.png" alt="facebook_icon"
                 /></a>
                 <a href="#"
-                  ><img src="image/img2/twitter_icon.png" alt="twitter_icon"
+                  ><img src="image/twitter_icon.png" alt="twitter_icon"
                 /></a>
                 <a href="#"
-                  ><img src="image/img2/linkedin_icon.png" alt="linkedin_icon"
+                  ><img src="image/linkedin_icon.png" alt="linkedin_icon"
                 /></a>
                 <a href="#"
-                  ><img src="image/img2/github_icon.png" alt="github_icon"
+                  ><img src="image/github_icon.png" alt="github_icon"
                 /></a>
               </div>
             </div>
@@ -575,22 +584,20 @@
             <div class="wave_line"></div>
             <div class="wave_line"></div>
           </div>
-          <img src="image/img/1.jpg" alt="anh1" id="poster_music" />
+          <img src="image/1.jpg" alt="anh1" id="poster_music" />
           <div class="info_song">
-            <h5 id="title">Em nên dừng lại</h5>
-            <div class="subtitle" id="s_t">Khang Việt</div>
+            <h5 id="title">On My Way</h5>
+            <div class="subtitle" id="s_t">Alan Walker</div>
           </div>
         </div>
         <audio
           controls
-          autoplay
-          src="song/audio3/On My Way.mp3"
+          src="song/On My Way.mp3"
           type="audio/mp3"
           id="myAudio"
         ></audio>
         <div></div>
       </div>
     </footer>
-    <script src="JS/indexjs.js"></script>
   </body>
 </html>

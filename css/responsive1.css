@@ -93,3 +93,53 @@
         width: 100%;
     }
 }
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .title {
+        padding: 0px;
+    }
+
+    #menu_btn {
+        display: none;
+    }
+
+    .content .left_content .menu a {
+        padding: 0px 10px;
+    }
+
+    .content .left_content .menu_song .menuSongItem {
+        padding: 0px;
+    }
+
+    .content .left_content .menu_song .menuSongItem i {
+        display: none;
+    }
+
+    .content .left_content .menu_song .menuSongItem>div {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #poster_music {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer .music_play>div:last-child {
+        display: none;
+    }
+
+
+    footer .music_play .music_left {
+        width: 40%;
+    }
+
+    .web_info>div>div:nth-child(2) {
+        width: 60%;
+    }
+
+    .web_info>div>div:nth-child(3) {
+        width: 50%;
+    }
+}
