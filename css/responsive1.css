@@ -63,6 +63,10 @@
         height: 69%;
     }
 
+    .embed iframe {
+        width: 100%;
+    }
+
     .content .right_content {
         width: 100%;
     }

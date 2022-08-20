@@ -57,6 +57,33 @@
             $("#loadMore").val("No Content").addClass("noContent");
             }
         }); 
+        
+        let y = 0;
+        setInterval(function(){
+            $("#imgSlider").css({
+                "margin-left": `${y - 840}px`
+            })
+            y -= 840;
+            if(y < -4200)
+                y = 840;
+        }, 5000)        
+        $(".slider>div i.angle-right ").click(function(){
+            $("#imgSlider").css({
+                "margin-left": `${y - 840}px`
+            })
+            y-=840;
+            if(y < -4200)
+                y = 840;
+        })
+
+        $(".slider>div i.angle-left ").click(function(){
+            if(y === 0)
+                y = -4200;
+            $("#imgSlider").css({
+                "margin-left": `${y + 840}px`
+            })
+            y+=840;
+        })
     })
 
     function isElementvisible(obj){

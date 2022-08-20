@@ -671,10 +671,37 @@ header nav .user:hover {
     margin: auto;
     overflow: auto;
     max-width: 840px;
+    position: relative;
+}
+
+.slider>div::-webkit-scrollbar {
+    display: none;
 }
 
 .slider>div img {
     width: 100%;
+    transition: .7s;
+}
+
+.slider>div i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.slider>div i:hover {
+    color: var(--footer-color);
+}
+
+.slider>div i.angle-left {
+    left: 10px;
+}
+
+.slider>div i.angle-right {
+    right: 10px;
 }
 
 .web_info>div {
