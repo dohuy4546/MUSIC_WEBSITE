@@ -60,14 +60,14 @@
         }); 
         
         let y = 0;
-        let width = $("#imgSlider").width();
-        let imgLength = $(".slider>div img").length;
+        let width = $(".slider").width();
+        console.log(width);
         setInterval(function(){
             $("#imgSlider").css({
                 "margin-left": `${y - width}px`
             })
             y -= width;
-            if(y < (-width * (imgLength-2)))
+            if(y < (-width * 5))
                 y = width;
         }, 5000)        
         $(".slider>div i.angle-right ").click(function(){
@@ -75,19 +75,19 @@
                 "margin-left": `${y - width}px`
             })
             y-=width;
-            if(y < -(width * (imgLength-2)))
+            if(y < -(width * 5))
                 y = width;
         })
 
         $(".slider>div i.angle-left ").click(function(){
             if(y === 0)
-                y = -(width * (imgLength-2));
+                y = -(width * 5);
             $("#imgSlider").css({
                 "margin-left": `${y + width}px`
             });
-            y+=840;
+            y+=width;
         })
-
+        
         $(".SongItems").on("click", ".remove", function(){
             $(this).parent().fadeOut("slow", function(){
                 $(this).remove();
