@@ -40,7 +40,6 @@
             let songName = $(this).find("h5").text();
             let author = $(this).find("p").text();
             let poster = $(this).find("img").attr("src");       
-            console.log(songName);
             for(let s of songs){
                 $(".SongItem").removeClass("song_active");
             }
@@ -60,7 +59,9 @@
         }); 
         
         let y = 0;
-        let width = $(".right_content>div").width();
+        let w = $("#imgSlider").css("width");
+        console.log(w);
+        let width = parseFloat(w);
         console.log(width);
         setInterval(function(){
             $("#imgSlider").css({
@@ -85,7 +86,7 @@
             $("#imgSlider").css({
                 "margin-left": `${y + width}px`
             });
-            y+=width;
+            y+=w;
         })
         
         $(".SongItems").on("click", ".remove", function(){
@@ -180,7 +181,6 @@
             else{
                 if(isElementvisible(title) && isElementvisible(menu))
                 {
-                    console.log("da nhan dc")
                     root.style.setProperty("--left-width", "0%");
                     title.setAttribute("style", "display: none");
                     menu.setAttribute("style", "display: none");
@@ -247,7 +247,6 @@
             setInterval(function(){
                 var new_song = document.querySelector(".new_song .songs");
                 new_song.scrollLeft += 310;
-                console.log(new_song.scrollWidth);
                 if(new_song.scrollLeft > new_song.clientWidth + 310)
                     new_song.scrollLeft -= new_song.scrollWidth;
             }, 6000)
