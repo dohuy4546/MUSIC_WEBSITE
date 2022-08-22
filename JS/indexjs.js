@@ -59,9 +59,7 @@
         }); 
         
         let y = 0;
-        let w = $("#imgSlider").css("width");
-        console.log(w);
-        let width = parseFloat(w);
+        let width = $("#imgSlider").width();
         console.log(width);
         setInterval(function(){
             $("#imgSlider").css({
