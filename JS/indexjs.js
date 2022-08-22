@@ -60,7 +60,7 @@
         }); 
         
         let y = 0;
-        let width = $(".slider").width();
+        let width = $(".right_content>div").width();
         console.log(width);
         setInterval(function(){
             $("#imgSlider").css({

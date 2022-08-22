@@ -215,6 +215,25 @@ header nav .search-box .icon {
     z-index: 999;
 }
 
+#suggests li {
+    background-color: white;
+    border-bottom: 1px solid var(--light-gray);
+    min-width: 150px;
+}
+
+#suggests li:last-child {
+    border-radius: 0px 0px 5px 5px;
+}
+
+#suggests li a {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+#suggests li:hover {
+    background: var(--light-gray);
+}
+
 header nav .user img {
     width: 30px;
     height: 30px;
