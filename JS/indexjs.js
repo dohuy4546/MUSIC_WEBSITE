@@ -1,5 +1,5 @@
     let images = ["image/2.jpg", "image/Son_Tung_MTP.jpg", "image/Đen_Vâu.jpg", "image/T.A.P.jpg", "image/1.jpg"];
-
+    let musics = ["On My Way", "Faded", "Stay", "All Falls Down", "Darkside", "Waiting For Love", "Alone"]
     $(document).ready(function(){
         $("#gototop").hide();
         $(".right_content").scroll(function(){
@@ -29,6 +29,7 @@
                                 <h5>${s_name}</h5>
                                 <p class="subtitle">${artist}</p>
                             </div>
+                            <i class="remove fa-solid fa-xmark"></i>
                         </li>`;
                 $("ul.pop_songs").append(h);
             }
@@ -59,32 +60,92 @@
         }); 
         
         let y = 0;
+        let width = $("#imgSlider").width();
+        let imgLength = $(".slider>div img").length;
         setInterval(function(){
             $("#imgSlider").css({
-                "margin-left": `${y - 840}px`
+                "margin-left": `${y - width}px`
             })
-            y -= 840;
-            if(y < -4200)
-                y = 840;
+            y -= width;
+            if(y < (-width * (imgLength-2)))
+                y = width;
         }, 5000)        
         $(".slider>div i.angle-right ").click(function(){
             $("#imgSlider").css({
-                "margin-left": `${y - 840}px`
+                "margin-left": `${y - width}px`
             })
-            y-=840;
-            if(y < -4200)
-                y = 840;
+            y-=width;
+            if(y < -(width * (imgLength-2)))
+                y = width;
         })
 
         $(".slider>div i.angle-left ").click(function(){
             if(y === 0)
-                y = -4200;
+                y = -(width * (imgLength-2));
             $("#imgSlider").css({
-                "margin-left": `${y + 840}px`
-            })
+                "margin-left": `${y + width}px`
+            });
             y+=840;
         })
-    })
+
+        $(".SongItems").on("click", ".remove", function(){
+            $(this).parent().fadeOut("slow", function(){
+                $(this).remove();
+            });
+        });
+
+        $('#search').keypress(function(event){
+	
+            let keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+                let SongName = $(".SongItem").find("h5");
+                let value = $(this).val().toLowerCase();
+                for(let s of SongName)
+                {
+                    if(s.textContent.toLowerCase().indexOf(value) > -1)
+                    {
+                        $(s).closest(".SongItem").addClass("find");
+                    }
+                }
+                setTimeout(function(){
+                    $(".SongItem").removeClass("find");
+                }, 5000)
+                $(this).val("");
+            }
+        
+        });
+
+        $("#search").keyup(function(){
+            let t = $(this).val();
+            let h = '';
+            for(let m of musics)
+             if(m.toLowerCase().indexOf(t) >= 0)
+                 h += `<li><a href="javascript:;">${m}</a></li>`;
+            
+             if(t !== ""){
+                $("#suggests li").show();
+                $("#suggests").html(h);
+             }
+             else{
+                $("#suggests li").hide();
+             }
+         });
+     
+         $("#suggests").on("click", "a", function(){
+             let text = $(this).text();
+             $("#search").val(text);
+             
+             $("#suggests li").hide();
+         });
+
+         $(".tabs>div").on("click", "input", function(){
+            $(".tabs>div input").removeClass("btn_active");
+            $(this).addClass("btn_active");
+            let k = $(this).attr("rel");
+            $(`.tabs ul`).removeClass("tab_active");
+            $(`.tabs ul:nth-child(${k})`).addClass("tab_active");
+         });
+    });
 
     function isElementvisible(obj){
         let style = window.getComputedStyle(obj);

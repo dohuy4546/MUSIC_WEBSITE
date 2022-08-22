@@ -47,6 +47,20 @@
         right: 20px;
     }
 
+    .search-box {
+        display: none;
+    }
+
+    .sad_song,
+    .chill_song {
+        flex-wrap: wrap;
+    }
+
+    .sad_song li,
+    .chill_song li {
+        width: 50%;
+    }
+
     .content {
         height: 70%;
     }

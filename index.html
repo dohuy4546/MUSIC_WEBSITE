@@ -48,7 +48,16 @@
             <li><a href="News.html">News</a></li>
             <li><a href="Radio.html">Radio</a></li>
           </ul>
-          <div class="search"></div>
+          <div class="search-box">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input
+              autocomplete="false"
+              type="search"
+              id="search"
+              placeholder="Search..."
+            />
+            <ul id="suggests"></ul>
+          </div>
           <a href="login.html" class="user flex">
             <img src="image/avatar.jpg" alt="user" />
             <h4>Sign in</h4>
@@ -218,6 +227,7 @@
                   <h5>Faded</h5>
                   <p class="subtitle">Alan Walker</p>
                 </div>
+                <i class="remove fa-solid fa-xmark"></i>
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
@@ -228,6 +238,7 @@
                   <h5>Faded</h5>
                   <p class="subtitle">Alan Walker</p>
                 </div>
+                <i class="remove fa-solid fa-xmark"></i>
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
@@ -238,6 +249,7 @@
                   <h5>Faded</h5>
                   <p class="subtitle">Alan Walker</p>
                 </div>
+                <i class="remove fa-solid fa-xmark"></i>
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
@@ -248,6 +260,7 @@
                   <h5>Faded</h5>
                   <p class="subtitle">Alan Walker</p>
                 </div>
+                <i class="remove fa-solid fa-xmark"></i>
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
@@ -258,6 +271,7 @@
                   <h5>Faded</h5>
                   <p class="subtitle">Alan Walker</p>
                 </div>
+                <i class="remove fa-solid fa-xmark"></i>
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
@@ -268,6 +282,7 @@
                   <h5>Faded</h5>
                   <p class="subtitle">Alan Walker</p>
                 </div>
+                <i class="remove fa-solid fa-xmark"></i>
               </li>
               <li class="songItem SongItem">
                 <div class="img_play flex">
@@ -278,6 +293,7 @@
                   <h5>Faded</h5>
                   <p class="subtitle">Alan Walker</p>
                 </div>
+                <i class="remove fa-solid fa-xmark"></i>
               </li>
             </ul>
           </div>
@@ -517,6 +533,106 @@
               </div>
             </div>
           </div>
+          <div class="section tabs">
+            <div>
+              <input
+                type="button"
+                rel="2"
+                class="button chill btn_active"
+                value="Chill Song"
+              />
+              <input
+                type="button"
+                rel="3"
+                class="button sad"
+                value="Sad Song"
+              />
+            </div>
+            <ul class="chill_song SongItems flex tab_active">
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Faded</h5>
+                  <p class="subtitle">Alan Walker</p>
+                </div>
+              </li>
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Faded</h5>
+                  <p class="subtitle">Alan Walker</p>
+                </div>
+              </li>
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Faded</h5>
+                  <p class="subtitle">Alan Walker</p>
+                </div>
+              </li>
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Faded</h5>
+                  <p class="subtitle">Alan Walker</p>
+                </div>
+              </li>
+            </ul>
+            <ul class="sad_song SongItems flex">
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Stay</h5>
+                  <p class="subtitle">Justin Bieber</p>
+                </div>
+              </li>
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Stay</h5>
+                  <p class="subtitle">Justin Bieber</p>
+                </div>
+              </li>
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Stay</h5>
+                  <p class="subtitle">Justin Bieber</p>
+                </div>
+              </li>
+              <li class="SongItem">
+                <div class="img_play flex">
+                  <img src="image/2.jpg" alt="Alan" />
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div>
+                  <h5>Stay</h5>
+                  <p class="subtitle">Justin Bieber</p>
+                </div>
+              </li>
+            </ul>
+          </div>
           <div class="section suggest">
             <h4>May be you'll like</h4>
             <div class="embed">
@@ -551,25 +667,25 @@
                 <h4>Sản phẩm của Huy và Quang</h4>
               </div>
               <div class="flex space-between">
-                <a href="#">Giới thiệu</a>
-                <a href="#">Liên hệ</a>
-                <a href="#">Quảng cáo</a>
+                <a href="javascript:;">Giới thiệu</a>
+                <a href="javascript:;">Liên hệ</a>
+                <a href="javascript:;">Quảng cáo</a>
               </div>
               <div class="flex space-between">
-                <a href="#">Góp ý</a>
-                <a href="#">Thỏa thuận sử dụng</a>
+                <a href="javascript:;">Góp ý</a>
+                <a href="javascript:;">Thỏa thuận sử dụng</a>
               </div>
               <div class="social_media">
-                <a href="#"
+                <a href="javascript:;"
                   ><img src="image/facebook_icon.png" alt="facebook_icon"
                 /></a>
-                <a href="#"
+                <a href="javascript:;"
                   ><img src="image/twitter_icon.png" alt="twitter_icon"
                 /></a>
-                <a href="#"
+                <a href="javascript:;"
                   ><img src="image/linkedin_icon.png" alt="linkedin_icon"
                 /></a>
-                <a href="#"
+                <a href="javascript:;"
                   ><img src="image/github_icon.png" alt="github_icon"
                 /></a>
               </div>

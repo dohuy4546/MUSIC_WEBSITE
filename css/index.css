@@ -172,6 +172,49 @@ header nav ul li a:hover {
     transition: 1s linear;
 }
 
+header nav .search-box {
+    width: 300px;
+    white-space: nowrap;
+    position: relative;
+}
+
+#search {
+    width: 300px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #262626;
+    font-size: 14px;
+    color: #262626;
+    padding-left: 45px;
+    border-radius: 5px;
+    transition: all .55s ease;
+}
+
+#search::-webkit-input-placeholder {
+    color: #65737e;
+}
+
+#search:focus,
+#search:active {
+    outline: none;
+    background: #fff;
+    border-bottom-width: 2px;
+}
+
+header nav .search-box .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 17px;
+    z-index: 1;
+    color: #4f5b66;
+}
+
+#suggests {
+    position: absolute;
+    z-index: 999;
+}
+
 header nav .user img {
     width: 30px;
     height: 30px;
@@ -438,10 +481,11 @@ header nav .user:hover {
 
 .right_content .popular_song .pop_songs .songItem {
     min-width: 150px;
-    height: 140px;
     list-style-type: none;
     margin-right: 20px;
     transition: .3s linear;
+    position: relative;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .right_content .popular_song .pop_songs .songItem .img_play {
@@ -507,6 +551,18 @@ header nav .user:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.songItem>i.remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.songItem>i.remove:hover {
+    color: var(--menu-hover);
 }
 
 .new_song {
@@ -660,11 +716,71 @@ header nav .user:hover {
     margin-top: 6px;
 }
 
+.sad_song,
+.chill_song {
+    display: none;
+}
+
+.sad_song li,
+.chill_song li {
+    border-radius: 5px;
+    list-style-type: none;
+    width: 25%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.sad_song li .img_play,
+.chill_song li .img_play {
+    position: relative;
+    overflow: hidden;
+}
+
+.sad_song li img,
+.chill_song li img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.sad_song li i,
+.chill_song li i {
+    position: absolute;
+    opacity: 0;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.sad_song li i:after,
+.chill_song li i:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    left: -13px;
+    top: -7px;
+    box-shadow: inset 0px 0px 3px #fff;
+}
+
+.sad_song li:hover i,
+.chill_song li:hover i {
+    opacity: 1;
+}
+
+.sad_song li:hover img,
+.chill_song li:hover img {
+    filter: brightness(80%);
+    transform: scale(1.15);
+}
+
 .suggest>div {
     margin-top: 1rem;
     text-align: center;
 }
-
 
 .slider>div {
     display: flex;
@@ -868,4 +984,30 @@ footer .music_play audio {
 
 audio::-webkit-media-controls-panel {
     background-color: var(--footer-color);
+}
+
+.find {
+    animation: blink 5s linear;
+}
+
+@keyframes blink {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.btn_active {
+    background: linear-gradient(to right, #3ec7e0, #526bf4);
+}
+
+.tab_active {
+    display: flex;
 }
